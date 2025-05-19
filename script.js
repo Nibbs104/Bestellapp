@@ -54,7 +54,11 @@ function decreaseAmountInBasket(index) {
   }
 }
 
-function removeFromBasket() {}
+function removeFromBasket() {
+  sdjbfgklsndl;
+  slkdnvsl;
+  sdölvns;
+}
 
 function addToBasket() {
   let contentRefMealInBasket = document.getElementById(
