@@ -17,3 +17,8 @@
   justify-content: center;
   align-items: center;
 }
+.meal_box_in_basket div {
+  display: flex;
+  gap: 16px;
+  padding: 16px 16px;
+}
