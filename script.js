@@ -1,34 +1,47 @@
-function render() {
+// function render() {
+//   let contentRefMealBox = document.getElementById("meal_box_content");
+//   contentRefMealBox.innerHTML = "";
+//   for (let index = 0; index < myDishes.length; index++) {
+//     contentRefMealBox.innerHTML += getMealBoxTemplate(index);
+//   }
+// }
+function moveDishes(indexDishes, startKey, destinationKey) {
+  let dishes = allDishes[startKey].splice(indexDishes, 1);
+  allDishes[destinationKey].push(dishes[0]);
+
+  // let dishesInBasket = allDishes[startKey + "InBasket"].splice(indexDishes, 1);
+  // allDishes[destinationKey + "InBasket"].push(dishesInBasket[0]);
+  renderDishes();
+}
+
+function renderDishes() {
   let contentRefMealBox = document.getElementById("meal_box_content");
   contentRefMealBox.innerHTML = "";
-  for (let index = 0; index < myDishes.length; index++) {
-    contentRefMealBox.innerHTML += getMealBoxTemplate(index);
+
+  for (
+    let indexDishes = 0;
+    indexDishes < allDishes.myDishes.length;
+    indexDishes++
+  ) {
+    contentRefMealBox.innerHTML += getMealBoxTemplate(indexDishes);
   }
 }
 
-// function updateBasket(index) {
-//   let amountCounter = 0;
-//   let contentRefAmountInBasket = document.getElementById("amount" + index);
-//   console.log((contentRefAmountInBasket.innerText = 0));
-// }
+function renderDishesInBasket() {
+  let contentRefMealBoxInBasket = document.getElementById(
+    "meal_box_content_in_basket"
+  );
+  contentRefMealBoxInBasket.innerHTML = "";
 
-// function addToBasket() {
-//   let contentRefMealInBasket = document.getElementById(
-//     "meal_box_content_in_basket"
-//   );
-//   contentRefMealInBasket.innerHTML = "";
-//   for (let index = 0; index < myDishes.length; index++) {
-//     let buttonAddtoBasket = (document.getElementById("btn" + index).onclick =
-//       function (event) {
-//         if (event.target.tagName === "BUTTON") {
-//           if (event.target.id == "btn" + index) {
-//             updateBasket(index);
-//           }
-//           contentRefMealInBasket.innerHTML += getMealInBasketTemplate(index);
-//         }
-//       });
-//   }
-// }
+  for (
+    let indexDishesInBasket = 0;
+    indexDishesInBasket < allDishes.myDishesInBasket.length;
+    indexDishesInBasket++
+  ) {
+    contentRefMealBoxInBasket.innerHTML +=
+      getMealInBasketTemplate(indexDishesInBasket);
+  }
+}
 
 function updateBasket(index) {
   // Erst prüfen, ob das Element existiert
