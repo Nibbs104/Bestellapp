@@ -6,30 +6,6 @@ function render() {
   }
 }
 
-// function updateBasket(index) {
-//   let amountCounter = 0;
-//   let contentRefAmountInBasket = document.getElementById("amount" + index);
-//   console.log((contentRefAmountInBasket.innerText = 0));
-// }
-
-// function addToBasket() {
-//   let contentRefMealInBasket = document.getElementById(
-//     "meal_box_content_in_basket"
-//   );
-//   contentRefMealInBasket.innerHTML = "";
-//   for (let index = 0; index < myDishes.length; index++) {
-//     let buttonAddtoBasket = (document.getElementById("btn" + index).onclick =
-//       function (event) {
-//         if (event.target.tagName === "BUTTON") {
-//           if (event.target.id == "btn" + index) {
-//             updateBasket(index);
-//           }
-//           contentRefMealInBasket.innerHTML += getMealInBasketTemplate(index);
-//         }
-//       });
-//   }
-// }
-
 function updateBasket(index) {
   // Erst prüfen, ob das Element existiert
   let contentRefAmountInBasket = document.getElementById("amount" + index);
@@ -54,7 +30,12 @@ function decreaseAmountInBasket(index) {
   }
 }
 
-function removeFromBasket() {}
+function removeFromBasket(index) {
+  let removeItemFromBasket = document.getElementById("basket-item-" + index);
+  for (let index = 0; index < myDishes.length; index++) {
+    removeItemFromBasket.innerHTML = "";
+  }
+}
 
 function addToBasket() {
   let contentRefMealInBasket = document.getElementById(

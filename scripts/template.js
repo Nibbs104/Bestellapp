@@ -11,7 +11,7 @@ function getMealInBasketTemplate(index) {
                         <h5>${myDishes[index].name}</h5>
                         <div><button onclick="decreaseAmountInBasket(${index})">-</button>
                             <p id="amount${index}"></p><button onclick="updateBasket(${index})">+</button>
-                            <p>65€</p><button>x</button>
+                            <p>65€</p><button onclick="removeFromBasket(${index})">x</button>
                         </div>
                     </div>`;
 }
